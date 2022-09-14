@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap = "vendor/autoload.php"
+    backupGlobals               = "false"
+    backupStaticAttributes      = "false"
+    colors                      = "true"
+    convertErrorsToExceptions   = "true"
+    convertNoticesToExceptions  = "true"
+    convertWarningsToExceptions = "true"
+    processIsolation            = "false"
+    stopOnFailure               = "false">
+
+    <testsuites>
+        <testsuite name="Project Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <env name="MYSQL_DB_DRIVER" value="mysql"/>
+        <env name="MYSQL_DB_HOST" value="localhost"/>
+        <env name="MYSQL_DB_PORT" value="3306"/>
+        <env name="MYSQL_DB_DATABASE" value="scandiweb"/>
+        <env name="MYSQL_DB_USERNAME" value="your logon"/>
+        <env name="MYSQL_DB_PASSWORD" value="your secure pass phrase"/>
+    </php>
+
+</phpunit>
