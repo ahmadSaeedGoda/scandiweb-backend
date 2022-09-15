@@ -22,7 +22,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 | specific and contains some sensitive data that can't be shared through the source code.
 |
 */
-define('APP_ENV', 'development');
+define('APP_ENV', 'production');
 
 use Dotenv\Dotenv;
 
