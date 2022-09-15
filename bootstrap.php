@@ -22,7 +22,24 @@ require_once __DIR__ . '/vendor/autoload.php';
 | specific and contains some sensitive data that can't be shared through the source code.
 |
 */
+define('APP_ENV', 'production');
+
 use Dotenv\Dotenv;
 
 $dotenv = DotEnv::createUnsafeImmutable(__DIR__);
-$dotenv->load();
+if (APP_ENV === 'development') {
+    $dotenv->load();
+}
+
+// Required ENV vars for this app in production
+$dotenv->required(
+    [
+        'MYSQL_DB_DRIVER',
+        'MYSQL_DB_HOST',
+        'MYSQL_DB_PORT',
+        'MYSQL_DB_DATABASE',
+        'MYSQL_DB_USERNAME',
+        'MYSQL_DB_PASSWORD',
+        'DEBUG'
+    ]
+);
