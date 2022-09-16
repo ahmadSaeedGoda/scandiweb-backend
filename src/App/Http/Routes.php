@@ -48,7 +48,7 @@ class Routes
     {
         return function (RouteCollector $r) use ($request) {
             $r->addGroup(
-                "/".$request->getAPIPrefix()."/".$request->getAPIVersion()."/",
+                "/public/index.php/".$request->getAPIPrefix()."/".$request->getAPIVersion()."/",
                 function (RouteCollector $r) {
                     $r->options(
                         'products',
