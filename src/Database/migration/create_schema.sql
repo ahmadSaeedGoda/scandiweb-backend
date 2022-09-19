@@ -77,7 +77,7 @@ CREATE TABLE `ProductTypeAttributes` (
 
 LOCK TABLES `ProductTypeAttributes` WRITE;
 /*!40000 ALTER TABLE `ProductTypeAttributes` DISABLE KEYS */;
-INSERT INTO `ProductTypeAttributes` (`PK_AttributeID`, `AttributeName`, `AttributeMeasureUnit`, `BackendDataType`, `FrontendInputType`, `FrontendLabel`, `IsRequired`, `DefaultValue`, `Note`, `FK_ProductType`) VALUES (1,'size','MB','float','number','Size',1,NULL,NULL,'DVD-disc'),(2,'weight','KG','float','number','Weight',1,NULL,NULL,'Book'),(3,'width','CM','float','number','Width',1,NULL,NULL,'Furniture'),(4,'height','CM','float','number','Height',1,NULL,NULL,'Furniture'),(5,'length','CM','float','number','Length',1,NULL,NULL,'Furniture');
+INSERT INTO `ProductTypeAttributes` (`PK_AttributeID`, `AttributeName`, `AttributeMeasureUnit`, `BackendDataType`, `FrontendInputType`, `FrontendLabel`, `IsRequired`, `DefaultValue`, `Note`, `FK_ProductType`) VALUES (1,'size','MB','numeric','number','Size',1,NULL,NULL,'DVD'),(2,'weight','KG','numeric','number','Weight',1,NULL,NULL,'Book'),(3,'width','CM','numeric','number','Width',1,NULL,NULL,'Furniture'),(4,'height','CM','numeric','number','Height',1,NULL,NULL,'Furniture'),(5,'length','CM','numeric','number','Length',1,NULL,NULL,'Furniture');
 /*!40000 ALTER TABLE `ProductTypeAttributes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +103,7 @@ CREATE TABLE `ProductTypes` (
 
 LOCK TABLES `ProductTypes` WRITE;
 /*!40000 ALTER TABLE `ProductTypes` DISABLE KEYS */;
-INSERT INTO `ProductTypes` (`PK_ProductType`, `Description`, `IsActive`) VALUES ('Book','Please provide weight in KG!',1),('DVD-disc','Please provide size in MB!',1),('Furniture','Please provide dimensions in HxWxL format.',1),('Glasses','Please provide length in Centimeters!',0);
+INSERT INTO `ProductTypes` (`PK_ProductType`, `Description`, `IsActive`) VALUES ('Book','Please provide weight in KG!',1),('DVD','Please provide size in MB!',1),('Furniture','Please provide dimensions in HxWxL format.',1),('Glasses','Please provide length in Centimeters!',0);
 /*!40000 ALTER TABLE `ProductTypes` ENABLE KEYS */;
 UNLOCK TABLES;
 
