@@ -1,0 +1,130 @@
+{
+	"variables": [],
+	"info": {
+		"name": "scandiweb",
+		"_postman_id": "a5ab603e-fa77-fba8-83d5-27db87343430",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List All Products",
+			"request": {
+				"url": "http://www.scandiweb.local/public/index.php/api/v1/products",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List All Product Types",
+			"request": {
+				"url": "http://www.scandiweb.local/public/index.php/api/v1/products/types",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Ping",
+			"request": {
+				"url": {
+					"raw": "http://www.scandiweb.local/public/index.php/api/v1/products?foo=baz",
+					"protocol": "http",
+					"host": [
+						"www",
+						"scandiweb",
+						"local"
+					],
+					"path": [
+						"public",
+						"index.php",
+						"api",
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "foo",
+							"value": "baz",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "is Valid SKU",
+			"request": {
+				"url": "http://www.scandiweb.local/public/index.php/api/v1/products/sku/isValid/TEST",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Mass Delete Products",
+			"request": {
+				"url": "http://www.scandiweb.local/public/index.php/api/v1/products",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"destroyableProductsIDs\": [1]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"url": "http://www.scandiweb.local/public/index.php/api/v1/products",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"SKU\": \"111-333\",\n\t\"Name\": \"111 333\",\n\t\"Price\": \"1.02\",\n\t\"FK_ProductType\": \"Book\",\n\t\"ProductAttributes\": {\n\t\t\"weight\": 1\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
