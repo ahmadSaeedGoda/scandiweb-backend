@@ -14,7 +14,7 @@ final class ProductsTest extends TestCase
 
     public function setUp(): void
     {
-        $this->_http = new HTTPClient(['base_uri' => 'http://www.scandiweb.local/api/v1/']);
+        $this->_http = new HTTPClient(['base_uri' => getenv('BASE_URL')]);
     }
 
     public function tearDown(): void
