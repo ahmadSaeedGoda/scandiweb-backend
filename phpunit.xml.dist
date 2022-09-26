@@ -17,6 +17,7 @@
     </testsuites>
 
     <php>
+        <env name="BASE_URL" value="http://www.scandiweb.local/public/index.php/api/v1/"/>
         <env name="MYSQL_DB_DRIVER" value="mysql"/>
         <env name="MYSQL_DB_HOST" value="localhost"/>
         <env name="MYSQL_DB_PORT" value="3306"/>
