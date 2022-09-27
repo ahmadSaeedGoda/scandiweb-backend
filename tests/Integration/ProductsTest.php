@@ -4,9 +4,6 @@ namespace Scandiweb\Test\Integration;
 
 use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Client as HTTPClient;
-use Scandiweb\App\Data\Models\Product;
-use Scandiweb\Database\Configuration\Configuration;
-use Scandiweb\Database\DatabaseManager;
 
 final class ProductsTest extends TestCase
 {
@@ -105,27 +102,13 @@ final class ProductsTest extends TestCase
         return $sku;
     }
 
-    /**
-     * @depends testAdd
-     */
-    public function testDelete(string $sku)
+    public function testDelete()
     {
-        $databaseConfig = new Configuration(
-            getenv('MYSQL_DB_DRIVER'),
-            getenv('MYSQL_DB_HOST'),
-            getenv('MYSQL_DB_PORT'),
-            getenv('MYSQL_DB_DATABASE'),
-            getenv('MYSQL_DB_USERNAME'),
-            getenv('MYSQL_DB_PASSWORD'),
-        );
-
-        $this->databaseManager = new DatabaseManager($databaseConfig);
-        
-        $productsIDs = (new Product)->where('SKU', $sku)->pluck('PK_ProductID')->toArray();
-
+        // should be replaced dynamically, or revamp the testing methodology completely,
+        // as it populates the main DB which is an anti pattern.
         $requestBody = <<<JSON
         {
-            "destroyableProductsIDs": [$productsIDs[0]]
+            "destroyableProductsIDs": [20]
         }
         JSON;
 
@@ -141,7 +124,8 @@ final class ProductsTest extends TestCase
         $this->assertTrue($responseBody->{"data"});
     }
 
-    private function _getRandomSKU() {
+    private function _getRandomSKU()
+    {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-';
         $sku = '';
         $length = 12;
