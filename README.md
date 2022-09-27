@@ -4,7 +4,7 @@
 - [Installation and Setup Instructions](#installation-and-setup-instructions)
   - [Requirements](#requirements)
   - [Getting The Codebase](#getting-the-codebase)
-  - [Installation & Configuration](#installation&configuration)
+  - [Installation and Configuration](#installation-and-configuration)
 - [Available Scripts](#available-scripts)
   - [composer dump-autoload](#composer-dump-autoload)
   - [composer test](#composer-test)
@@ -37,7 +37,7 @@ The recommended way is using `git`. You'll need to make sure `git version ~2.34.
 $ git clone https://github.com/ahmadSaeedGoda/scandiweb-backend.git
 ```
 
-### Installation & Configuration:
+### Installation and Configuration:
 - <b>Step 1:</b> Get the code. "As explained [above](#getting-the-codebase)".
 - <b>Step 2:</b> Use Composer to install dependencies. Navigate to the root directory of the project you cloned or downloaded then run the following command to install required dependencies.
 ```sh
