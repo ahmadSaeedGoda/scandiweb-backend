@@ -44,8 +44,7 @@ $ git clone https://github.com/ahmadSaeedGoda/scandiweb-backend.git
 $ composer install
 ```
 - <b>Step 3:</b> Create & Configure your database.<br>
-If successfully the first two steps have been finished, now you can create the database on your database server(MySQL). Refer to this path in the project `src/Database/migration/create_schema.sql`, open the file, copy the contents of this file then paste into your preferred DB console. A MYSQL Wrokbench or something similar would be a perfect tool. Please note that there is no need to previously create a database as this file takes care of that by creating a new DB called `scandiweb`. In case that name is taken you can change the DB name in the file before importing it or even create your DB after commenting out that very first line of the file.
-Also change the second line to match your created DB name.
+If successfully the first two steps have been finished, now you can create the database on your database server(MySQL). Refer to this path in the project `src/Database/migration/create_schema.sql`, open the file, copy the contents of this file then paste into your preferred DB console. A MYSQL Wrokbench or something similar would be a perfect tool. You can import it directly after creating the DB and use it.
 
 - <b>Step 4:</b> Set the Environment Variables. Find the file named `.env.example` in the root directory of the project. Copy the file then rename the new one `.env` then set the environment variables listed below with values accroding to your environment respectively:
     - MYSQL_DB_DRIVER
